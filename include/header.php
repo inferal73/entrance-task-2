@@ -26,6 +26,7 @@
                         height: 100%;
                         font-size: 62.5%;
                         background-color: #FFFFFF;
+                        box-sizing: border-box;
                     }
 
                     body {

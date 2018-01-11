@@ -1,6 +1,7 @@
-body {
-
+*, *::before, *::after {
+  box-sizing: inherit;
 }
+
 .page-body {
   flex: 1;
   display: flex;
