@@ -68,5 +68,8 @@
 </div>
 <div id="app">
     <header>
-
+        <a href="/" class="logo"></a>
+        <div class="header-actions">
+            <a href="/create-event.php" class="button button-blue"></a>
+        </div>
     </header>
