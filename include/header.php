@@ -30,10 +30,9 @@
 
                     body {
                         min-height: 100vh;
-                        font-size: 1.6rem;
-                        line-height: 2.4rem;
-                        color: #262626;
-                        font-family: 'FFMetaWebProNormal', sans-serif;
+                        font-size: 1.3rem;
+                        line-height: 1.5rem;
+                        font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
                         -webkit-font-smoothing: antialiased;
                         min-width: 121.6rem;
                         font-variant-numeric: lining-nums;
@@ -42,7 +41,6 @@
                         font-feature-settings: 'lnum' on;
 
                     }
-
                 </style>
                 <link rel="stylesheet" href="/dist/css/style.css">
             </head>
