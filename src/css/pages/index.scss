@@ -1,0 +1,78 @@
+.workspace {
+  min-height: 100%;
+  width: 100%;
+
+}
+
+.workspace-top-bar {
+  width: 100%;
+  padding-left: 1.88%;
+  height: 46px;
+  display: flex;
+  border-bottom: 1px solid #E9ECEF;
+}
+
+.workspace-date-controls {
+  height: 100%;
+  width: 245px;
+  display: flex;
+  align-items: center;
+}
+
+.workspace-calendar-title {
+  display: inline-block;
+  margin-left: 13.5px;
+  margin-right: 13.5px;
+}
+
+.workspace-time-grade {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 245px);
+  font-size: 1.1rem;
+  letter-spacing: 0.04rem;
+  line-height: 1.3rem;
+  font-weight: bold;
+  span {
+    text-align: center;
+    width:  4.73%;
+    margin-left: auto;
+    color: #000000;
+    transition: color .3s;
+    &.passed {
+      color: #858E98;
+    }
+    &:first-child {
+      margin-left: 0.77%;
+    }
+    &:last-child {
+      margin-right: 0.77%;
+    }
+  }
+}
+
+.workspace-current-time {
+  position: absolute;
+  background-color: #007DFF ;
+  color: #fff;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  width: 4.73%;
+  text-align: center;
+  border-radius: 100px;
+  top: 50%;
+  z-index: 3;
+  transform: translate(9%, -50%);
+  transition: left .3s;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: calc(100vh - 104px);
+    background-color: #007DFF;
+  }
+}

@@ -1,0 +1,47 @@
+.button {
+  cursor: pointer;
+  font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 4px;
+  outline: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 16px;
+  transition: color .3s, background-color .3s;
+  &-blue {
+    background-color: #007DFF;
+    color: #FFFFFF;
+    &:hover {
+      background-color: #0059FF;
+    }
+    &:active {
+      background-color: #3E00FF;
+    }
+  }
+}
+
+.button-with-icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-color: #E9ECEF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .3s;
+  svg {
+    color: rgba(0,0,0,.4);
+    transition: color .3s;
+  }
+  &:hover {
+    background-color: #E9ECEF;
+    svg {
+      color: #000000;
+    }
+  }
+
+}

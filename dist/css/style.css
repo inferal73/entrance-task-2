@@ -7,7 +7,7 @@
 @font-face {
   font-family: 'OpenSans';
   src: url("/assets/fonts/OpenSans-SemiBold.woff2") format("woff2"), url("/assets/fonts/OpenSans-SemiBold.woff") format("woff");
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal; }
 
 @font-face {
@@ -27,6 +27,16 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+
+.hidden {
+  display: none; }
+
+h3 {
+  font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  color: #000000; }
 
 header {
   width: 100%;
@@ -48,3 +58,139 @@ header {
   background-repeat: no-repeat;
   width: 174px;
   height: 25px; }
+
+.button {
+  cursor: pointer;
+  font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 4px;
+  outline: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 16px;
+  -webkit-transition: color .3s, background-color .3s;
+  -o-transition: color .3s, background-color .3s;
+  transition: color .3s, background-color .3s; }
+  .button-blue {
+    background-color: #007DFF;
+    color: #FFFFFF; }
+    .button-blue:hover {
+      background-color: #0059FF; }
+    .button-blue:active {
+      background-color: #3E00FF; }
+
+.button-with-icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-color: #E9ECEF;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s; }
+  .button-with-icon svg {
+    color: rgba(0, 0, 0, 0.4);
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s; }
+  .button-with-icon:hover {
+    background-color: #E9ECEF; }
+    .button-with-icon:hover svg {
+      color: #000000; }
+
+.workspace {
+  min-height: 100%;
+  width: 100%; }
+
+.workspace-top-bar {
+  width: 100%;
+  padding-left: 1.88%;
+  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #E9ECEF; }
+
+.workspace-date-controls {
+  height: 100%;
+  width: 245px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.workspace-calendar-title {
+  display: inline-block;
+  margin-left: 13.5px;
+  margin-right: 13.5px; }
+
+.workspace-time-grade {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 245px);
+  font-size: 1.1rem;
+  letter-spacing: 0.04rem;
+  line-height: 1.3rem;
+  font-weight: bold; }
+  .workspace-time-grade span {
+    text-align: center;
+    width: 4.73%;
+    margin-left: auto;
+    color: #000000;
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s; }
+    .workspace-time-grade span.passed {
+      color: #858E98; }
+    .workspace-time-grade span:first-child {
+      margin-left: 0.77%; }
+    .workspace-time-grade span:last-child {
+      margin-right: 0.77%; }
+
+.workspace-current-time {
+  position: absolute;
+  background-color: #007DFF;
+  color: #fff;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  width: 4.73%;
+  text-align: center;
+  border-radius: 100px;
+  top: 50%;
+  z-index: 3;
+  -webkit-transform: translate(9%, -50%);
+      -ms-transform: translate(9%, -50%);
+          transform: translate(9%, -50%);
+  -webkit-transition: left .3s;
+  -o-transition: left .3s;
+  transition: left .3s; }
+  .workspace-current-time:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 1px;
+    height: calc(100vh - 104px);
+    background-color: #007DFF; }
