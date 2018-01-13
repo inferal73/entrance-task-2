@@ -43,7 +43,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="stylesheet" href="/dist/css/style.css">
 </head>
-<body data-page="<?=$page?>" class="<?=$page?>">
+<body data-page="<?=$page?>" class="page-<?=$page?>">
 <div style="display:none;">
     <svg xmlns="http://www.w3.org/2000/svg">
         <symbol id="close" viewBox="0 0 10 10">
@@ -52,7 +52,7 @@
         <symbol id="edit" viewBox="0 0 12 12">
             <g fill="none" fill-rule="evenodd"><path d="M-2-2h16v16H-2z"/><path d="M11.08 3.106a.58.58 0 0 0 0-.822L9.714.919a.58.58 0 0 0-.823 0L7.82 1.986l2.187 2.187 1.073-1.067zM.75 9.06v2.187h2.187l6.451-6.456-2.187-2.188L.75 9.061z" fill="currentColor" fill-rule="nonzero"/></g>
         </symbol>
-        <symbol id="edit" viewBox="0 0 12 12">
+        <symbol id="calendar" viewBox="0 0 12 12">
             <g fill="none" fill-rule="evenodd"><path d="M-2-2h16v16H-2z"/><path d="M1 4v7h10V4H1zm9-3h2v11H0V1h2V0h2v1h4V0h2v1zM2 5v2h2V5H2zm3 0v2h2V5H5zM2 8v2h2V8H2z" fill="currentColor" fill-rule="nonzero"/></g>
         </symbol>
         <symbol id="arrow-left" viewBox="0 0 12 12">
@@ -61,12 +61,15 @@
         <symbol id="arrow-right" viewBox="0 0 12 12">
             <path d="M5 1.757L9.243 6 5 10.243" stroke-width="2" stroke="currentColor" fill="none" fill-rule="evenodd"/>
         </symbol>
+        <symbol id="plus" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4z"/>
+        </symbol>
     </svg>
 </div>
 <div id="app">
     <header>
         <a href="/" class="logo"></a>
         <div class="header-actions">
-            <a href="/create-event.php" class="button button-blue">Создать встречу</a>
+            <a href="/new-event.php" class="button button-blue">Создать встречу</a>
         </div>
     </header>

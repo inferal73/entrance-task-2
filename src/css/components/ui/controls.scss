@@ -1,6 +1,7 @@
 .button {
   cursor: pointer;
   font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
+  font-weight: 500;
   font-size: 1.3rem;
   line-height: 1.6rem;
   -webkit-appearance: none;
@@ -11,6 +12,16 @@
   color: #000;
   padding: 10px 16px;
   transition: color .3s, background-color .3s;
+  &-grey {
+    background-color: #E9ECEF;
+    color: #000000;
+    &:hover {
+      background-color: #DDE0E4;
+    }
+    &:active {
+      background-color: #C6CDD4;
+    }
+  }
   &-blue {
     background-color: #007DFF;
     color: #FFFFFF;
@@ -43,5 +54,92 @@
       color: #000000;
     }
   }
+}
 
+label {
+  font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
+  display: block;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.input-element {
+  margin-bottom: 24px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  border: 2px solid #E9ECEF;
+  border-radius: 4px;
+  padding: 11px 24px 12px 10px;
+  outline: 0;
+  font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
+  transition: border-color .3s;
+  &:focus {
+    border-color: #007DFF;
+  }
+  &:valid {
+    & ~ .input-reset {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.input {
+  position: relative;
+}
+
+.input-action {
+  cursor: pointer;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 50%;
+  right: 9.1px;
+  transform: translate(0, -50%);
+  svg{
+    color: #AFB4B8;
+    transition: color .3s;
+  }
+  &:hover {
+    svg {
+      color: #000000;
+    }
+  }
+}
+
+.input-reset {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  .time-input {
+    width: 17.14%;
+    &:first-child {
+      margin-right: 3.81%;
+      width: 56.67%;
+    }
+  }
+}
+
+.time-splitter {
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: -10px;
 }

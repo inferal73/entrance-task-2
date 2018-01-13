@@ -24,7 +24,9 @@ const commonPlugins = [
 
 module.exports = {
   entry: {
-    main: './src/js/main.js'
+    main: './src/js/main.js',
+    index: './src/js/index.js',
+    event: './src/js/event.js'
   },
   output: {
     path: __dirname + '/dist',
