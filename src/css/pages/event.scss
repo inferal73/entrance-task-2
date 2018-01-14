@@ -9,6 +9,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .page-event .page-body {
+    padding-bottom: 123px;
+  }
+}
+
 .member-list {
   display: flex;
   flex-wrap: wrap;
@@ -20,6 +26,22 @@
     align-items: center;
     background-color: #E9ECEF;
     border-radius: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .member-list {
+    display: block;
+    li {
+      height: 32px;
+    }
+    .member-avatar {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .member-remove {
+    margin-left: auto;
   }
 }
 
@@ -88,4 +110,40 @@
 .recommend-room-time {
   font-weight: bold;
   margin-right: 16px;
+}
+
+.mobile-delete-button {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-delete-button {
+    display: none;
+  }
+  .mobile-delete {
+    color: #FF3333;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+  }
+  .mobile-delete-button {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 28px;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 8px;
+      left: calc(-50vw + 50%);
+      right: calc(-50vw + 50%);
+      background-color: #E9ECEF;
+    }
+  }
 }

@@ -119,10 +119,13 @@ include('include/header.php');
                 </div>
             </div>
         </div>
+        <div class="mobile-delete-button">
+            <button onclick="document.body.classList.add('popup-visible')" class="mobile-delete">Удалить встречу</button>
+        </div>
         <div class="page-actions">
             <a href="/" class="button button-grey">Отмена</a>
-            <button onclick="document.body.classList.add('popup-visible')" class="button button-grey">Удалить встречу</button>
-            <a href="/" class="button button-grey">Сохранить</a>
+            <button onclick="document.body.classList.add('popup-visible')" class="button button-grey desktop-delete-button">Удалить встречу</button>
+            <a href="/" class="button button-blue">Сохранить</a>
         </div>
     </div>
 </main>

@@ -29,7 +29,6 @@
             line-height: 1.5rem;
             font-family: 'Helvetica Neue', 'OpenSans', Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
-            min-width: 121.6rem;
             font-variant-numeric: lining-nums;
             -moz-font-feature-settings: 'lnum';
             -webkit-font-feature-settings: 'lnum';

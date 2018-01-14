@@ -29,6 +29,46 @@ include('include/header.php');
                         </button>
                     </div>
                 </div>
+            </div>
+            <div class="col">
+                <div class="time-inputs">
+                    <div class="time-input">
+                        <div class="input-element">
+                            <label for="subject">Дата</label>
+                            <div class="input">
+                                <input type="text" id="subject" value="14 декабря, 2017">
+                                <button class="input-action input-reset">
+                                    <svg width="10" height="10">
+                                        <use xlink:href="#calendar"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-input">
+                        <div class="input-element">
+                            <label for="subject">Начало</label>
+                            <div class="input">
+                                <input type="text" id="subject" value="16:00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-splitter">
+                        —
+                    </div>
+                    <div class="time-input">
+                        <div class="input-element">
+                            <label for="subject">Конец</label>
+                            <div class="input">
+                                <input type="text" id="subject" value="16:30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns two-col">
+            <div class="col">
                 <div class="input-element">
                     <label for="member">Участники</label>
                     <div class="input">
@@ -71,40 +111,6 @@ include('include/header.php');
                 </ul>
             </div>
             <div class="col">
-                <div class="time-inputs">
-                    <div class="time-input">
-                        <div class="input-element">
-                            <label for="subject">Дата</label>
-                            <div class="input">
-                                <input type="text" id="subject" value="14 декабря, 2017">
-                                <button class="input-action input-reset">
-                                    <svg width="10" height="10">
-                                        <use xlink:href="#calendar"></use>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="time-input">
-                        <div class="input-element">
-                            <label for="subject">Начало</label>
-                            <div class="input">
-                                <input type="text" id="subject" value="16:00">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="time-splitter">
-                        —
-                    </div>
-                    <div class="time-input">
-                        <div class="input-element">
-                            <label for="subject">Конец</label>
-                            <div class="input">
-                                <input type="text" id="subject" value="16:30">
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="recommend-rooms">
                     <label>Рекомендованные переговорки</label>
                     <button class="recommend-room">
@@ -121,6 +127,9 @@ include('include/header.php');
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="page-message">
+            Выберите переговорку
         </div>
         <div class="page-actions">
             <a href="/" class="button button-grey">Отмена</a>

@@ -7,9 +7,22 @@ header {
   border-bottom: 1px solid #E9ECEF;
   padding: 0 1.88%;
 }
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0 5%;
+  }
+}
+
 .logo {
   background-image: url('/assets/img/logo.svg');
   background-repeat: no-repeat;
   width: 174px;
   height: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-actions {
+    display: none;
+  }
 }

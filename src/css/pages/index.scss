@@ -11,12 +11,29 @@
   border-bottom: 1px solid #E9ECEF;
 }
 
+@media screen and (max-width: 768px) {
+  .workspace-top-bar {
+    padding-left: 0;
+    display: block;
+    height: auto;
+  }
+}
+
 .workspace-date-controls {
   height: 100%;
   width: calc(245px - 1.88%);
   display: flex;
   align-items: center;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .workspace-date-controls  {
+    width: 100%;
+    padding: 12px 16px;
+    justify-content: space-between;
+    border-bottom: 1px solid #E9ECEF;
+  }
 }
 
 .workspace-calendar-title {
@@ -50,6 +67,13 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .workspace-calendar-container {
+    width: 100%;
+    height: 360px;
+  }
+}
+
 .workspace-time-grade {
   position: relative;
   display: flex;
@@ -59,6 +83,14 @@
   letter-spacing: 0.04rem;
   line-height: 1.3rem;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .workspace-time-grade {
+    width: 960px;
+    z-index: 2;
+    transform: translateX(0);
+  }
 }
 
 .workspace-time-list {
@@ -83,6 +115,27 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .workspace-time-list {
+    width: 960px;
+    transform: translateX(0);
+    padding-top: 8px;
+    padding-bottom: 10px;
+    li {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: calc(100% + 11px);
+        height: 400px;
+        width: 1px;
+        left: 50%;
+        background-color: rgba(19, 100, 205, 0.1);
+      }
+    }
+  }
+}
+
 .workspace-current-time {
   position: absolute;
   background-color: #007DFF ;
@@ -90,6 +143,7 @@
   padding-top: 3px;
   padding-bottom: 4px;
   width: 4.73%;
+  min-width: 44px;
   text-align: center;
   border-radius: 100px;
   top: 50%;
@@ -113,6 +167,12 @@
   display: flex;
 }
 
+@media screen and (max-width: 768px) {
+  .workspace-body {
+    position: relative;
+  }
+}
+
 .workspace-left-bar {
   padding: 21px 25px 21px 25px;
   width: 245px;
@@ -121,14 +181,63 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 768px) {
+  .workspace-left-bar {
+    width: 100%;
+    background-color: #F7F8F9;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 16px;
+  }
+}
+
 .rooms {
   margin-bottom: 24px;
+  transform: translateX(0);
+  &.fixed {
+    .room-title {
+      left: 0;
+      height: 60px;
+      width: 180px;
+      box-shadow: none;
+      border-radius: 0;
+      padding-top: 12px;
+    }
+    .room-member-length {
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      position: absolute;
+      width: 170px;
+      z-index: 5;
+      left: 8px;
+      top: 35px;
+      transition: opacity .3s, visibility .3s;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rooms {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .rooms-floor-number {
   margin-bottom: 8px;
   h4 {
     color: #858E98;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rooms-floor-number {
+    margin-left: 16px;
+    h4 {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -160,6 +269,39 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .rooms-list {
+    li {
+      margin-bottom: 2px;
+      height: 58px;
+      position: relative;
+      .room-title {
+        position: absolute;
+        top: 0;
+        left: 16px;
+        z-index: 3;
+        color: #000000;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+        padding: 5px 8px 6px;
+        background-color: #FFFFFF;
+        border-radius: 4px;
+        box-shadow: 0 1px 8px 0 rgba(0,44,92,0.28);
+        transition: left .3s, width .3s, border-radius .3s, padding .3s;
+      }
+      .room-member-length {
+        visibility: hidden;
+        opacity: 0;
+      }
+      &.disabled {
+        .room-title {
+          color: #858E98;
+        }
+      }
+    }
+  }
+}
+
 .room-events {
   position: absolute;
   top: 0;
@@ -167,6 +309,7 @@
   left: calc(100% + 26px);
   width: calc(100vw - 245px);
   display: flex;
+  transform: translateX(0);
   li {
     display: inline-block;
     height: 100%;
@@ -212,11 +355,24 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .room-events {
+    left: 0;
+    width: 960px;
+  }
+}
+
 .workspace-time-line {
   pointer-events: none;
   position: relative;
   display: flex;
   width: calc(100% - 245px);
+}
+
+@media screen and (max-width: 768px) {
+  .workspace-time-line {
+    display: none;
+  }
 }
 
 .workspace-time-line-hour {

@@ -55,10 +55,50 @@ function eventHandler() {
   });
 }
 
+function initTouchEvents() {
+  var startx = 0;
+  var touchElements = [].concat(_toConsumableArray(document.querySelectorAll('.room-events')), [document.querySelector('.workspace-time-grade')]);
+  var rooms = document.querySelectorAll('.rooms');
+
+  document.body.addEventListener('touchstart', function (e) {
+    var touchobj = e.changedTouches[0];
+    startx = parseInt(touchobj.clientX);
+  }, false);
+
+  document.body.addEventListener('touchmove', function (e) {
+    var touchobj = e.changedTouches[0];
+    var dist = (parseInt(touchobj.clientX) - startx) * 0.15;
+    touchElements.forEach(function (el) {
+      var currentTransalte = parseInt(getComputedStyle(el).transform.split(/\s*,\s*/)[4]);
+      var newTranslate = currentTransalte + dist;
+      if (newTranslate > 180) newTranslate = 180;
+      if (newTranslate < -(960 - screen.width)) newTranslate = -(960 - screen.width);
+      el.style.transform = 'translateX(' + newTranslate + 'px)';
+    });
+    var touchTranslate = parseInt(getComputedStyle(touchElements[0]).transform.split(/\s*,\s*/)[4]);
+    if (touchTranslate > 0) {
+      rooms.forEach(function (el) {
+        el.classList.add('fixed');
+      });
+    } else {
+      rooms.forEach(function (el) {
+        el.classList.remove('fixed');
+      });
+    }
+  }, false);
+}
+
+function setTimeLineHeight() {
+  var eventHeight = getComputedStyle(document.querySelector('.workspace-body')).height;
+  document.head.innerHTML += '<style>.workspace-time-list li:after { height: ' + eventHeight + ';} .workspace-current-time:after {height: ' + (parseFloat(eventHeight) + 11) + 'px; }</style>';
+}
+
 window.onload = function () {
   timeToWidh();
   emptySpaceHandler();
   eventHandler();
+  initTouchEvents();
+  setTimeLineHeight();
 };
 
 /***/ })

@@ -12,6 +12,12 @@
   transition: opacity .3s, visibility .3s;
 }
 
+@media screen and (max-width: 768px) {
+  .popup{
+    align-items: flex-end;
+  }
+}
+
 .popup-visible {
   .popup {
     opacity: 1;
@@ -36,6 +42,12 @@
   box-sizing: content-box;
   width: 320px;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .popup-content {
+    margin-bottom: 24px;
+  }
 }
 
 .popup-image {

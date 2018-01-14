@@ -45,8 +45,48 @@ function eventHandler () {
   })
 }
 
+function initTouchEvents() {
+  let startx = 0;
+  const touchElements = [...document.querySelectorAll('.room-events'), document.querySelector('.workspace-time-grade')];
+  const rooms = document.querySelectorAll('.rooms');
+
+  document.body.addEventListener('touchstart', function(e){
+    const touchobj = e.changedTouches[0];
+    startx = parseInt(touchobj.clientX);
+  }, false)
+
+  document.body.addEventListener('touchmove', function(e){
+    const touchobj = e.changedTouches[0]
+    const dist = (parseInt(touchobj.clientX) - startx) * 0.15;
+    touchElements.forEach((el) => {
+      const currentTransalte = parseInt(getComputedStyle(el).transform.split(/\s*,\s*/)[4]);
+      let newTranslate = currentTransalte + dist;
+      if(newTranslate > 180 ) newTranslate = 180
+      if(newTranslate < -(960 - screen.width) ) newTranslate = -(960 - screen.width)
+      el.style.transform = `translateX(${newTranslate}px)`;
+    });
+    const touchTranslate = parseInt(getComputedStyle(touchElements[0]).transform.split(/\s*,\s*/)[4]);
+    if(touchTranslate > 0) {
+      rooms.forEach((el) => {
+        el.classList.add('fixed');
+      })
+    } else {
+      rooms.forEach((el) => {
+        el.classList.remove('fixed');
+      })
+    }
+  }, false)
+}
+
+function setTimeLineHeight() {
+  const eventHeight = getComputedStyle(document.querySelector('.workspace-body')).height;
+  document.head.innerHTML += `<style>.workspace-time-list li:after { height: ${eventHeight};} .workspace-current-time:after {height: ${parseFloat(eventHeight) + 11}px; }</style>`
+}
+
 window.onload = function () {
   timeToWidh();
   emptySpaceHandler();
   eventHandler();
+  initTouchEvents();
+  setTimeLineHeight();
 }
