@@ -59,6 +59,19 @@ function initTouchEvents() {
   var startx = 0;
   var touchElements = [].concat(_toConsumableArray(document.querySelectorAll('.room-events')), [document.querySelector('.workspace-time-grade')]);
   var rooms = document.querySelectorAll('.rooms');
+  var fixedElementsHandler = function fixedElementsHandler() {
+    var touchTranslate = parseInt(getComputedStyle(touchElements[0]).transform.split(/\s*,\s*/)[4]);
+    if (touchTranslate > 0) {
+      rooms.forEach(function (el) {
+        el.classList.add('fixed');
+      });
+    } else {
+      rooms.forEach(function (el) {
+        el.classList.remove('fixed');
+      });
+    }
+  };
+  fixedElementsHandler();
 
   document.body.addEventListener('touchstart', function (e) {
     var touchobj = e.changedTouches[0];
@@ -75,16 +88,7 @@ function initTouchEvents() {
       if (newTranslate < -(960 - screen.width)) newTranslate = -(960 - screen.width);
       el.style.transform = 'translateX(' + newTranslate + 'px)';
     });
-    var touchTranslate = parseInt(getComputedStyle(touchElements[0]).transform.split(/\s*,\s*/)[4]);
-    if (touchTranslate > 0) {
-      rooms.forEach(function (el) {
-        el.classList.add('fixed');
-      });
-    } else {
-      rooms.forEach(function (el) {
-        el.classList.remove('fixed');
-      });
-    }
+    fixedElementsHandler();
   }, false);
 }
 

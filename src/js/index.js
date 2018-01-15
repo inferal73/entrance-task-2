@@ -49,6 +49,19 @@ function initTouchEvents() {
   let startx = 0;
   const touchElements = [...document.querySelectorAll('.room-events'), document.querySelector('.workspace-time-grade')];
   const rooms = document.querySelectorAll('.rooms');
+  const fixedElementsHandler = () => {
+    const touchTranslate = parseInt(getComputedStyle(touchElements[0]).transform.split(/\s*,\s*/)[4]);
+    if(touchTranslate > 0) {
+      rooms.forEach((el) => {
+        el.classList.add('fixed');
+      })
+    } else {
+      rooms.forEach((el) => {
+        el.classList.remove('fixed');
+      })
+    }
+  }
+  fixedElementsHandler();
 
   document.body.addEventListener('touchstart', function(e){
     const touchobj = e.changedTouches[0];
@@ -65,16 +78,7 @@ function initTouchEvents() {
       if(newTranslate < -(960 - screen.width) ) newTranslate = -(960 - screen.width)
       el.style.transform = `translateX(${newTranslate}px)`;
     });
-    const touchTranslate = parseInt(getComputedStyle(touchElements[0]).transform.split(/\s*,\s*/)[4]);
-    if(touchTranslate > 0) {
-      rooms.forEach((el) => {
-        el.classList.add('fixed');
-      })
-    } else {
-      rooms.forEach((el) => {
-        el.classList.remove('fixed');
-      })
-    }
+    fixedElementsHandler();
   }, false)
 }
 

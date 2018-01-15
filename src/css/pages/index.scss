@@ -89,7 +89,7 @@
   .workspace-time-grade {
     width: 960px;
     z-index: 2;
-    transform: translateX(0);
+    transform: translateX(180px);
   }
 }
 
@@ -118,7 +118,6 @@
 @media screen and (max-width: 768px) {
   .workspace-time-list {
     width: 960px;
-    transform: translateX(0);
     padding-top: 8px;
     padding-bottom: 10px;
     li {
@@ -359,6 +358,7 @@
   .room-events {
     left: 0;
     width: 960px;
+    transform: translateX(180px);
   }
 }
 
